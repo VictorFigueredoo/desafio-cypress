@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-09T17:04:09.105Z",
+    "end": "2025-08-09T17:04:12.020Z",
+    "duration": 2915,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c23c00da-6c3e-4f1e-a2e5-6f35ac2f4312",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.spec.js",
+      "file": "cypress\\e2e\\login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8396892d-dfba-4886-986b-858c7e996e18",
+          "title": "Fluxo de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Não permite login se não existir usuário cadastrado",
+              "fullTitle": "Fluxo de Login Não permite login se não existir usuário cadastrado",
+              "timedOut": null,
+              "duration": 1691,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/login');\ncy.preencherLogin('usuario.inexistente@example.com', 'SenhaQualquer123');\ncy.clicarEntrar();\ncy.contains('Problemas com o login do usuário').should('be.visible');",
+              "err": {},
+              "uuid": "3194d45a-463e-484b-b81f-4a3bb3464960",
+              "parentUUID": "8396892d-dfba-4886-986b-858c7e996e18",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realiza login com sucesso e redireciona para Home",
+              "fullTitle": "Fluxo de Login Realiza login com sucesso e redireciona para Home",
+              "timedOut": null,
+              "duration": 1194,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fazerLogin('joao.teste@teste.com', 'Senha123!');\ncy.url().should('not.include', '/login'); // garante que saiu da tela de login\ncy.url().should('include', '/'); // garante que entrou na home\ncy.contains('Bem vindo').should('be.visible'); // valida mensagem de boas-vindas",
+              "err": {},
+              "uuid": "07f8fda0-1a91-47bd-a83e-e80b1c26a154",
+              "parentUUID": "8396892d-dfba-4886-986b-858c7e996e18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3194d45a-463e-484b-b81f-4a3bb3464960",
+            "07f8fda0-1a91-47bd-a83e-e80b1c26a154"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2885,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

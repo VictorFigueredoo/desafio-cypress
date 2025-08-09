@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-09T17:04:18.518Z",
+    "end": "2025-08-09T17:04:39.549Z",
+    "duration": 21031,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ec7410ac-4e7e-45d8-9b4e-40ad61e457ed",
+      "title": "",
+      "fullFile": "cypress\\e2e\\movimentacao.spec.js",
+      "file": "cypress\\e2e\\movimentacao.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+          "title": "Criar Movimentações",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve criar movimentação do tipo Receita",
+              "fullTitle": "Criar Movimentações Deve criar movimentação do tipo Receita",
+              "timedOut": null,
+              "duration": 3811,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.preencherMovimentacao({\n  tipo: 'REC',\n  dataTransacao: '01/08/2025',\n  dataPagamento: '02/08/2025',\n  descricao: 'Venda produto X',\n  interessado: 'Cliente Y',\n  valor: '1000',\n  conta: 'vitoria',\n  status: '1'\n});\ncy.salvarMovimentacao();\ncy.contains('Movimentação adicionada com sucesso').should('be.visible');",
+              "err": {},
+              "uuid": "f0abe1e8-d187-46d9-9033-741358e4661b",
+              "parentUUID": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve criar movimentação do tipo Despesa",
+              "fullTitle": "Criar Movimentações Deve criar movimentação do tipo Despesa",
+              "timedOut": null,
+              "duration": 3909,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.preencherMovimentacao({\n  tipo: 'DESP',\n  dataTransacao: '01/08/2025',\n  dataPagamento: '02/08/2025',\n  descricao: 'Compra material Z',\n  interessado: 'Fornecedor W',\n  valor: '500',\n  conta: 'ana',\n  status: '0'\n});\ncy.salvarMovimentacao();\ncy.contains('Movimentação adicionada com sucesso').should('be.visible');",
+              "err": {},
+              "uuid": "3378fcbc-1005-4c11-b4af-8cbe605775b5",
+              "parentUUID": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve criar movimentações para meses diferentes",
+              "fullTitle": "Criar Movimentações Deve criar movimentações para meses diferentes",
+              "timedOut": null,
+              "duration": 5857,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.preencherMovimentacao({\n  tipo: 'REC',\n  dataTransacao: '01/07/2025',\n  dataPagamento: '02/07/2025',\n  descricao: 'Venda mês 7',\n  interessado: 'Cliente M',\n  valor: '700',\n  conta: 'vitoria',\n  status: '1'\n});\ncy.salvarMovimentacao();\ncy.acessarCriarMovimentacao();\ncy.preencherMovimentacao({\n  tipo: 'DESP',\n  dataTransacao: '01/08/2025',\n  dataPagamento: '02/08/2025',\n  descricao: 'Despesa mês 8',\n  interessado: 'Fornecedor N',\n  valor: '300',\n  conta: 'ana',\n  status: '0'\n});\ncy.salvarMovimentacao();\ncy.contains('Movimentação adicionada com sucesso').should('be.visible');",
+              "err": {},
+              "uuid": "38528cdd-ad9f-40d7-8f3f-1ddfeda4367a",
+              "parentUUID": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campos de data inválidos",
+              "fullTitle": "Criar Movimentações Deve validar campos de data inválidos",
+              "timedOut": null,
+              "duration": 3844,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.preencherMovimentacao({\n  tipo: 'REC',\n  dataTransacao: '99/99/9999',\n  dataPagamento: '99/99/9999',\n  descricao: 'Data inválida',\n  interessado: 'Teste',\n  valor: '100',\n  conta: 'vitoria',\n  status: '1'\n});\ncy.salvarMovimentacao();\ncy.contains(/Data da Movimentação inválida|Data da Movimentação deve ser menor ou igual à data atual|Data do pagamento inválida/i).should('be.visible');",
+              "err": {},
+              "uuid": "b93ba81a-0d5f-4010-a139-acacd624fe69",
+              "parentUUID": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo valor inválido",
+              "fullTitle": "Criar Movimentações Deve validar campo valor inválido",
+              "timedOut": null,
+              "duration": 3505,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.preencherMovimentacao({\n  tipo: 'REC',\n  dataTransacao: '01/08/2025',\n  dataPagamento: '02/08/2025',\n  descricao: 'Valor inválido',\n  interessado: 'Teste',\n  valor: 'abc',\n  conta: 'vitoria',\n  status: '1'\n});\ncy.salvarMovimentacao();\ncy.contains('Valor deve ser um número').should('be.visible');",
+              "err": {},
+              "uuid": "2c2236a6-3693-4636-9b77-91b8149096a5",
+              "parentUUID": "0d9d51b5-844b-4560-ae99-d056c5eb28b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f0abe1e8-d187-46d9-9033-741358e4661b",
+            "3378fcbc-1005-4c11-b4af-8cbe605775b5",
+            "38528cdd-ad9f-40d7-8f3f-1ddfeda4367a",
+            "b93ba81a-0d5f-4010-a139-acacd624fe69",
+            "2c2236a6-3693-4636-9b77-91b8149096a5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

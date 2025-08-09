@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-09T17:03:56.057Z",
+    "end": "2025-08-09T17:04:05.989Z",
+    "duration": 9932,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f140b6fe-fa89-4a77-94cf-b736b27f806d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\contas.spec.js",
+      "file": "cypress\\e2e\\contas.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eef3a51b-fdf2-4c30-9050-766b044fc592",
+          "title": "Gerenciamento de Contas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve adicionar duas contas com sucesso",
+              "fullTitle": "Gerenciamento de Contas Deve adicionar duas contas com sucesso",
+              "timedOut": null,
+              "duration": 3582,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessarAdicionarConta();\ncy.adicionarConta('Conta Teste 1');\ncy.acessarAdicionarConta();\ncy.adicionarConta('Conta Teste 2');\n// Validar que as contas aparecem na listagem\ncy.acessarListarContas();\ncy.contains('td', 'Conta Teste 1').should('be.visible');\ncy.contains('td', 'Conta Teste 2').should('be.visible');",
+              "err": {},
+              "uuid": "913a62e1-fd71-4958-a323-2ff1dda4ae56",
+              "parentUUID": "eef3a51b-fdf2-4c30-9050-766b044fc592",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve alterar o nome de uma conta",
+              "fullTitle": "Gerenciamento de Contas Deve alterar o nome de uma conta",
+              "timedOut": null,
+              "duration": 2622,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.editarConta('Conta Teste 1', 'Conta Teste 1 Alterada');\n// Validar alteração\ncy.acessarListarContas();\ncy.contains('td', 'Conta Teste 1 Alterada').should('be.visible');",
+              "err": {},
+              "uuid": "7ce44ce6-31c8-4c9c-a9d4-839ada7e04f0",
+              "parentUUID": "eef3a51b-fdf2-4c30-9050-766b044fc592",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não deve permitir adicionar conta com nome já existente",
+              "fullTitle": "Gerenciamento de Contas Não deve permitir adicionar conta com nome já existente",
+              "timedOut": null,
+              "duration": 2010,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessarAdicionarConta();\ncy.adicionarConta('Conta Teste 2');\n// Ajuste a mensagem de erro conforme seu sistema\ncy.contains('Já existe uma conta com esse nome!').should('be.visible');",
+              "err": {},
+              "uuid": "28965509-4fcf-43cd-8b11-76a5ea85edf5",
+              "parentUUID": "eef3a51b-fdf2-4c30-9050-766b044fc592",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não deve permitir excluir conta vinculada a movimentação",
+              "fullTitle": "Gerenciamento de Contas Não deve permitir excluir conta vinculada a movimentação",
+              "timedOut": null,
+              "duration": 1656,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Tenta excluir conta que sabemos que está vinculada\ncy.excluirConta('vitoria');\n// Ajuste a mensagem de erro conforme seu sistema\ncy.contains('Conta em uso na movimentações').should('be.visible');",
+              "err": {},
+              "uuid": "b2ab88a8-1bc5-4c74-91eb-f9530911b2a3",
+              "parentUUID": "eef3a51b-fdf2-4c30-9050-766b044fc592",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "913a62e1-fd71-4958-a323-2ff1dda4ae56",
+            "7ce44ce6-31c8-4c9c-a9d4-839ada7e04f0",
+            "28965509-4fcf-43cd-8b11-76a5ea85edf5",
+            "b2ab88a8-1bc5-4c74-91eb-f9530911b2a3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9870,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

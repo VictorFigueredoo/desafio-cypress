@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-09T17:06:33.267Z",
+    "end": "2025-08-09T17:06:38.159Z",
+    "duration": 4892,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3ea13dd7-60c9-416e-a1ed-195859625efe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\resumo_mensal.spec.js",
+      "file": "cypress\\e2e\\resumo_mensal.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4485cbc0-b752-4aa5-917c-c257b23da481",
+          "title": "Resumo Mensal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve filtrar movimentações por mês e ano",
+              "fullTitle": "Resumo Mensal Deve filtrar movimentações por mês e ano",
+              "timedOut": null,
+              "duration": 2667,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.selecionarMesAnoResumo('08', '2025'); // Agosto de 2025\ncy.clicarBuscarResumo();\n// Valide que resultados relacionados aparecem na tela, exemplo:\ncy.contains('Venda produto X').should('be.visible');\ncy.contains('Compra material Z').should('be.visible');",
+              "err": {},
+              "uuid": "836dc982-86e1-4389-b410-6c11c31ec448",
+              "parentUUID": "4485cbc0-b752-4aa5-917c-c257b23da481",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve excluir uma movimentação",
+              "fullTitle": "Resumo Mensal Deve excluir uma movimentação",
+              "timedOut": null,
+              "duration": 2165,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.selecionarMesAnoResumo('08', '2025');\ncy.clicarBuscarResumo();\ncy.excluirMovimentacaoResumo('Venda produto X');\n// Validação após exclusão (exemplo: mensagem ou ausência do item)\ncy.contains('Movimentação removida com sucesso!').should('be.visible');",
+              "err": {},
+              "uuid": "9f968c04-b9e1-46c3-b34e-b27c9e319dfc",
+              "parentUUID": "4485cbc0-b752-4aa5-917c-c257b23da481",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "836dc982-86e1-4389-b410-6c11c31ec448",
+            "9f968c04-b9e1-46c3-b34e-b27c9e319dfc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4832,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
