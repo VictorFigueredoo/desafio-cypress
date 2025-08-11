@@ -11,8 +11,8 @@ describe('Fluxo de Login', () => {
   it('Realiza login com sucesso e redireciona para Home', () => {
     cy.fazerLogin('joao.teste@teste.com', 'Senha123!');
 
-    cy.url().should('not.include', '/login'); // garante que saiu da tela de login
-    cy.url().should('include', '/');          // garante que entrou na home
-    cy.contains('Bem vindo').should('be.visible'); // valida mensagem de boas-vindas
+    cy.url().should('not.include', '/login'); 
+    cy.url().should('include', '/');        
+    cy.contains('Bem vindo').should('be.visible');
   });
 });
