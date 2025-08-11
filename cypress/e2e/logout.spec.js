@@ -6,10 +6,10 @@ describe('Logout', () => {
   it('Deve deslogar o usuário com sucesso', () => {
     cy.fazerLogout()
 
-    // Validar que redirecionou para página de login
+    // Valida que redirecionou para página de login
     cy.url().should('include', '/logout')
 
-    // Validar que o botão login está visível (ou outra validação na página de login)
+    // Valida que o botão login está visível
     cy.get('button[type="submit"]').contains('Entrar').should('be.visible')
   })
 })
