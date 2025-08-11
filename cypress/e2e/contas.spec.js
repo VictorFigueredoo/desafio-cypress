@@ -9,7 +9,7 @@ describe('Gerenciamento de Contas', () => {
     cy.acessarAdicionarConta()
     cy.adicionarConta('Conta Teste 2')
 
-    // Validar que as contas aparecem na listagem
+    // Valida que as contas aparecem na listagem
     cy.acessarListarContas()
     cy.contains('td', 'Conta Teste 1').should('be.visible')
     cy.contains('td', 'Conta Teste 2').should('be.visible')
@@ -18,7 +18,7 @@ describe('Gerenciamento de Contas', () => {
   it('Deve alterar o nome de uma conta', () => {
     cy.editarConta('Conta Teste 1', 'Conta Teste 1 Alterada')
 
-    // Validar alteração
+    // Valida alteração
     cy.acessarListarContas()
     cy.contains('td', 'Conta Teste 1 Alterada').should('be.visible')
   })
@@ -27,7 +27,7 @@ describe('Gerenciamento de Contas', () => {
     cy.acessarAdicionarConta()
     cy.adicionarConta('Conta Teste 2')
 
-    // Ajuste a mensagem de erro conforme seu sistema
+  
     cy.contains('Já existe uma conta com esse nome!').should('be.visible')
   })
 
@@ -36,7 +36,7 @@ describe('Gerenciamento de Contas', () => {
 
     cy.excluirConta('vitoria')
 
-    // Ajuste a mensagem de erro conforme seu sistema
+  
     cy.contains('Conta em uso na movimentações').should('be.visible')
   })
 })
