@@ -20,7 +20,7 @@ describe('Cadastro de novo usuário', () => {
 
 describe('Fluxo de Login', () => {
   it('Não permite login se não existir usuário cadastrado', () => {
-    // Ajustar URL para a página correta de login
+    // Ajusta URL para a página correta de login
     cy.visit('/login');
 
     cy.preencherLogin('usuario.inexistente@example.com', 'SenhaQualquer123');
@@ -32,8 +32,8 @@ describe('Fluxo de Login', () => {
   it('Realiza login com sucesso e redireciona para Home', () => {
     cy.fazerLogin('joao.teste@teste.com', 'Senha123!');
 
-    cy.url().should('not.include', '/login'); // garante que saiu da tela de login
-    cy.url().should('include', '/');          // garante que entrou na home
-    cy.contains('Bem vindo').should('be.visible'); // valida mensagem de boas-vindas
+    cy.url().should('not.include', '/login'); 
+    cy.url().should('include', '/');        
+    cy.contains('Bem vindo').should('be.visible');
   });
 });
