@@ -27,7 +27,7 @@ Cypress.Commands.add('clicarEntrar', () => {
 })
 
 Cypress.Commands.add('fazerLogin', (email, senha) => {
-  cy.visit('/login')            // Vai direto para a página de login
+  cy.visit('/login')         
   cy.preencherLogin(email, senha)
   cy.clicarEntrar()
 })
@@ -45,13 +45,13 @@ Cypress.Commands.add('adicionarConta', (nome) => {
   cy.get('button[type="submit"]').contains('Salvar').click()
 })
 
-// Listar contas - abre a lista de contas (geralmente clicando em Contas > Listar)
+// Listar contas - abre a lista de contas (clicando em Contas > Listar)
 Cypress.Commands.add('acessarListarContas', () => {
   cy.get('a.dropdown-toggle').contains('Contas').click()
-  cy.get('a[href="/contas"]').contains('Listar').click() // ajuste se necessário, pois o href é '/'
+  cy.get('a[href="/contas"]').contains('Listar').click() 
 })
 
-// Editar conta pelo nome atual e alterar para novo nome
+// Edita conta pelo nome atual e alterar para novo nome
 Cypress.Commands.add('editarConta', (nomeAtual, nomeNovo) => {
   cy.acessarListarContas()
   cy.contains('td', nomeAtual)
