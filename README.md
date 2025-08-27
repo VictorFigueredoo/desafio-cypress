@@ -18,7 +18,7 @@ Você precisa ter instalado:
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/desafio-cypress.git
+git clone https://github.com/VictorFigueredoo/desafio-cypress.git
 cd desafio-cypress
 npm install
 ▶️ Executando os testes
