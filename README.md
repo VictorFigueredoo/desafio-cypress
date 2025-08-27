@@ -6,7 +6,7 @@ Este projeto contém testes automatizados para a aplicação **Seu Barriga** uti
 
 ## 📋 Pré-requisitos
 
-Antes de iniciar, você precisa ter instalado:
+Você precisa ter instalado:
 - [Node.js](https://nodejs.org/) (versão LTS recomendada)
 - [Git](https://git-scm.com/)
 - [Cypress](https://www.cypress.io/) (instalado via npm)
@@ -25,34 +25,25 @@ npm install
 Abrir o Cypress no modo interativo:
 
 bash
-Copiar
-Editar
 npx cypress open
 Executar no modo headless (com geração de relatório Mochawesome):
 
 bash
-Copiar
-Editar
 npx cypress run
 📊 Relatórios de Testes
 Após executar os testes no modo headless, o relatório HTML estará disponível em:
 
 bash
-Copiar
-Editar
 cypress/reports/mochawesome.html
 🎥 Gravação de Vídeos
 O Cypress grava vídeos automaticamente quando executado com npx cypress run.
 Os vídeos ficam salvos em:
 
 bash
-Copiar
-Editar
 cypress/videos/
 🛠 Estrutura do Projeto
+
 bash
-Copiar
-Editar
 📂 cypress
  ┣ 📂 e2e               # Casos de teste
  ┣ 📂 fixtures          # Massa de dados
